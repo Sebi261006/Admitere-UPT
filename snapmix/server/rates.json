@@ -1,0 +1,13 @@
+{
+  "base": {
+    "photography": 850,
+    "cocktail": 720,
+    "full": 1300
+  },
+  "perGuest": 75,
+  "perHour": 160,
+  "extraGuestThreshold": 40,
+  "extraGuestFee": 300,
+  "weekendMultiplier": 1.15,
+  "eveningMultiplier": 1.1
+}
