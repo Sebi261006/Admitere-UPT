@@ -1,0 +1,219 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: #0f172a;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #020617;
+}
+
+nav h1 {
+    color: #ef4444;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #020617, #1e293b);
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 55px;
+}
+
+.btn {
+    background: #ef4444;
+    padding: 12px 25px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+/* CARDS */
+.cards {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.card {
+    background: #1e293b;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* EXERCITII */
+#exercitii {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+input, select {
+    margin: 10px;
+    padding: 10px;
+}
+
+/* TABLE */
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+}
+
+textarea {
+    height: 100px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px;
+    background: #ef4444;
+    border: none;
+    color: white;
+}
+
+.galerie {
+    padding: 40px;
+}
+
+.galerie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.galerie-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.galerie-grid img:hover {
+    transform: scale(1.05);
+}
+
+.istorie {
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.istorie h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Responsive pentru mobile */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+
+    .hero {
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    .hero h2 {
+        font-size: 35px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    td, th {
+        padding: 5px;
+    }
+
+    form {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .galerie {
+        padding: 20px;
+    }
+
+    .galerie-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .istorie {
+        padding: 20px;
+        max-width: 100%;
+    }
+}

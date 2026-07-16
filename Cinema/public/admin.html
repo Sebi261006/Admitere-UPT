@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/assets/index.css">
+  <style>
+    .admin-section { max-width: 1000px; margin: 120px auto; padding: 20px; background: rgba(0,0,0,0.5); border-radius: 16px; color: #fff; }
+    .admin-card { background: rgba(255,255,255,0.1); border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 6px 15px rgba(0,0,0,0.5); }
+    .btn-delete { padding: 6px 12px; background: red; border: none; border-radius: 6px; color: #fff; cursor: pointer; }
+    .btn-delete:hover { background: darkred; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="main-nav">
+      <a href="/index2" class="logo">🎬 Cinema Reservation</a>
+      <ul class="nav-links">
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="admin-section">
+    <h1>Admin Dashboard</h1>
+
+    <h2>All Reservations</h2>
+    <div id="reservations-container">
+    
+    </div>
+
+    <h2>All Users</h2>
+    <div id="users-container">
+     
+    </div>
+  </div>
+
+  <script>
+    async function fetchReservations() {
+      const res = await fetch("/admin/reservations");
+      const data = await res.json();
+      const container = document.getElementById("reservations-container");
+      container.innerHTML = "";
+      data.forEach(r => {
+        container.innerHTML += `
+          <div class="admin-card">
+            <p><strong>ID:</strong> ${r.id}</p>
+            <p><strong>User:</strong> ${r.user_email}</p>
+            <p><strong>Seats:</strong> ${r.seats_reserved}</p>
+            <p><strong>Amount:</strong> $${r.amount}</p>
+            <p><strong>Status:</strong> ${r.status}</p>
+            <p><strong>Date:</strong> ${r.date}</p>
+            <button class="btn-delete" onclick="deleteReservation(${r.id})">Delete</button>
+          </div>`;
+      });
+    }
+
+    async function deleteReservation(id) {
+      if (!confirm("Sigur vrei să ștergi rezervarea?")) return;
+      await fetch(`/admin/reservations/${id}`, { method: "DELETE" });
+      fetchReservations();
+    }
+
+    async function fetchUsers() {
+      const res = await fetch("/admin/users");
+      const data = await res.json();
+      const container = document.getElementById("users-container");
+      container.innerHTML = "";
+      data.forEach(u => {
+        container.innerHTML += `
+          <div class="admin-card">
+            <p><strong>Name:</strong> ${u.name}</p>
+            <p><strong>Email:</strong> ${u.email}</p>
+            <p><strong>Admin:</strong> ${u.is_admin ? "Yes" : "No"}</p>
+            <p><strong>Joined:</strong> ${u.joined}</p>
+          </div>`;
+      });
+    }
+
+    fetchReservations();
+    fetchUsers();
+  </script>
+</body>
+</html>

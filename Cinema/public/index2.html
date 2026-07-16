@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎬 Cinema Reservation - Dashboard</title>
+  <link rel="stylesheet" href="assets/index.css" />
+</head>
+<body>
+  <header>
+    <nav class="main-nav">
+      <a href="/index2" class="logo">🎬 Cinema Reservation</a>
+      <ul class="nav-links">
+        <li><a href="/shows">Shows</a></li>
+        <li><a href="/my-reservations">My Reservations</a></li>
+        <li><a href="/admin" id="admin-link" style="display:none;">Admin</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container_text">
+    <h1>Bun venit în Dashboard</h1>
+    <p>Rezervă-ți filmele preferate sau gestionează rezervările tale.</p>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        &copy; <span id="currentYear"></span> Toate drepturile rezervate.
+        <a class="mesaj" href="/trimite-mesaj">Trimite un mesaj</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+   
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+   
+    async function checkSession() {
+      try {
+        const res = await fetch("/check-session", { cache: "no-store" });
+        if (!res.ok) throw new Error("network");
+        const data = await res.json();
+        if (!data.loggedIn) window.location.href = "/login";
+      } catch (e) {
+        console.error("checkSession error:", e);
+        window.location.href = "/login";
+      }
+    }
+
+    checkSession();
+
+    window.addEventListener("pageshow", function(event) {
+      if (event.persisted) checkSession();
+    });
+
+    history.pushState(null, "", location.href);
+    window.addEventListener("popstate", function() {
+      history.pushState(null, "", location.href);
+      checkSession();
+    });
+
+    
+    async function checkAdmin() {
+      try {
+        const res = await fetch("/check-admin", { cache: "no-store" });
+        const data = await res.json();
+        if (data.isAdmin) {
+          document.getElementById("admin-link").style.display = "inline-block";
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    checkAdmin();
+  </script>
+</body>
+</html>

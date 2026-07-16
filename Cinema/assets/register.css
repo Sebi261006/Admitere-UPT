@@ -1,0 +1,91 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg,#141e30,#243b55,#0183e9);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+
+.register-container {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(0,0,0,0.5); 
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  text-align: center;
+  color: #fff;
+}
+
+.register-container h2 {
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+.register-container input[type="text"],
+.register-container input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.register-container input::placeholder {
+  color: #ddd;
+}
+
+.register-container button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #ff6600, #ff9933);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.register-container button:hover {
+  background: linear-gradient(135deg, #ff9933, #ff6600);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+.register-container p {
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+.register-container p a {
+  color: #ff6600;
+  text-decoration: none;
+}
+
+.register-container p a:hover {
+  text-decoration: underline;
+}

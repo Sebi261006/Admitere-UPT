@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎬 Available Shows</title>
+  <link rel="stylesheet" href="assets/index.css" />
+</head>
+<body>
+  <header>
+    <nav class="main-nav">
+      <a href="/index2" class="logo">🎬 Cinema Reservation</a>
+      <ul class="nav-links">
+        <li><a href="/index2">Dashboard</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container_text">
+    <h1>Filmele disponibile</h1>
+
+    <div class="show-card container_text">
+      <h2>Test Movie Screening - Test Cinema Hall</h2>
+      <p><strong>Descriere:</strong> Un film test pentru sistemul nostru de rezervări</p>
+      <p><strong>Data:</strong> 26.09.2025, 15:12</p>
+      <p><strong>Durată:</strong> 120 minute</p>
+      <p><strong>Preț:</strong> $15.99</p>
+      <p><strong>Locuri disponibile:</strong> 100</p>
+      <form action="/book" method="POST">
+        <input type="hidden" name="show_id" value="1">
+        <button type="submit" class="btn">Rezervă acum</button>
+      </form>
+    </div>
+
+    <div class="show-card container_text">
+      <h2>Test Movie - Test Cinema</h2>
+      <p><strong>Descriere:</strong> Alt film test</p>
+      <p><strong>Data:</strong> 20.09.2025, 15:14</p>
+      <p><strong>Durată:</strong> 120 minute</p>
+      <p><strong>Preț:</strong> $10</p>
+      <p><strong>Locuri disponibile:</strong> 50</p>
+      <form action="/book" method="POST">
+        <input type="hidden" name="show_id" value="2">
+        <button type="submit" class="btn">Rezervă acum</button>
+      </form>
+    </div>
+
+    <div class="show-card container_text">
+      <h2>Conflict Test Movie - Conflict Test Cinema</h2>
+      <p><strong>Descriere:</strong> Test pentru conflicte de locuri</p>
+      <p><strong>Data:</strong> 21.09.2025, 15:14</p>
+      <p><strong>Durată:</strong> 90 minute</p>
+      <p><strong>Preț:</strong> $12</p>
+      <p><strong>Locuri disponibile:</strong> 20</p>
+      <form action="/book" method="POST">
+        <input type="hidden" name="show_id" value="3">
+        <button type="submit" class="btn">Rezervă acum</button>
+      </form>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="currentYear"></span> Toate drepturile rezervate.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

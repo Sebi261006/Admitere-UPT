@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Program</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <h1>Culturism Pro</h1>
+    <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="exercitii.html">Exerciții</a></li>
+        <li><a href="nutritie.html">Nutriție</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<h2 style="text-align:center">Creează programul tău</h2>
+
+<div style="text-align:center">
+    <input type="text" id="zi" placeholder="Zi (ex: Luni)">
+    <input type="text" id="antrenament" placeholder="Ex: Piept + Triceps">
+
+    <button onclick="adaugaProgram()">Adaugă</button>
+</div>
+
+<h3 style="text-align:center">Programul tău</h3>
+
+<ul id="listaProgram" style="width:300px; margin:auto;"></ul>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Înregistrare Utilizator</title>
+  <link rel="stylesheet" href="/assets/register.css">
+</head>
+<body>
+  <div class="register-container">
+    <h2>Înregistrează-te</h2>
+    <form action="/register" method="POST">
+      <input type="text" name="email" placeholder="Adresă de email" required><br>
+      <input type="password" name="password" placeholder="Parolă" required><br>
+      <button type="submit">Înregistrează-te</button>
+    </form>
+    <p>Ai deja cont? <a href="/login">Autentificare</a></p>
+  </div>
+</body>
+</html>

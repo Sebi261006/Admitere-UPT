@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎬 Cinema Reservation</title>
+    <link rel="stylesheet" href="assets/index.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav">
+        <a href="/" class="logo">🎬 Cinema Reservation</a>
+        <ul class="nav-links">
+          <li><a href="/login">Autentificare</a></li>
+          <li><a href="/register">Înregistrare</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container_text">
+      <h1>Bun venit</h1>
+      <p>Rezervă-ți filmele preferate cu ușurință și rapiditate.</p>
+      <a href="/register" class="btn">Începe acum</a>
+      <a href="/login" class="btn">Autentificare</a>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          &copy; <span id="currentYear"></span> Toate drepturile rezervate.
+          <a class="mesaj">Pentru a ne contacta:</a>
+          <a class="mesaj" href="/trimite-mesaj">Trimite un mesaj</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

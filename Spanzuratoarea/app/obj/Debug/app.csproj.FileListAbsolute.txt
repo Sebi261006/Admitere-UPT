@@ -1,0 +1,6 @@
+C:\Users\Sebi\source\repos\app\app\obj\Debug\app.csproj.AssemblyReference.cache
+C:\Users\Sebi\source\repos\app\app\obj\Debug\app.csproj.CoreCompileInputs.cache
+C:\Users\Sebi\source\repos\app\app\bin\Debug\app.exe
+C:\Users\Sebi\source\repos\app\app\bin\Debug\app.pdb
+C:\Users\Sebi\source\repos\app\app\obj\Debug\app.exe
+C:\Users\Sebi\source\repos\app\app\obj\Debug\app.pdb

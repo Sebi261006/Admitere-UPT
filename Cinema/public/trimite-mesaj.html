@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trimite Mesaj</title>
+  <link rel="stylesheet" href="/assets/mesaj.css">
+</head>
+<body>
+  <h1>Trimite un mesaj</h1>
+  <form action="/trimite-mesaj" method="POST" class="form-container">
+    <label for="nume">Nume:</label>
+    <input type="text" id="nume" name="nume" placeholder="Introdu numele tău" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Introdu emailul tău" required>
+
+    <label for="subiect">Subiect:</label>
+    <select id="subiect" name="subiect" required>
+      <option value="problema">Problemă</option>
+      <option value="sugestie">Sugestie</option>
+      <option value="reclamatie">Reclamație</option>
+      <option value="alte">Altele</option>
+    </select>
+    
+    <label for="mesaj">Mesaj:</label>
+    <textarea id="mesaj" name="mesaj" placeholder="Scrie mesajul tău aici..." required></textarea>
+
+    <button type="submit">Trimite Mesaj</button>
+  </form>
+</body>
+</html>

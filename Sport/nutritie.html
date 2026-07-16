@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nutriție</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <h1>Culturism Pro</h1>
+    <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="exercitii.html">Exerciții</a></li>
+        <li><a href="nutritie.html">Nutriție</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<h2 style="text-align:center">Nutriție în culturism</h2>
+
+<div style="padding:20px">
+
+<h3>Macronutrienți</h3>
+<ul>
+<li><b>Proteine</b> – esențiale pentru creșterea musculară (carne, ouă, lactate)</li>
+<li><b>Carbohidrați</b> – oferă energie (orez, cartofi, paste)</li>
+<li><b>Grăsimi sănătoase</b> – susțin hormonii (avocado, nuci)</li>
+</ul>
+
+<h3>Micronutrienți</h3>
+<p>Vitaminele și mineralele sunt importante pentru funcționarea organismului.</p>
+
+<h3>Hidratare</h3>
+<p>Se recomandă minim 2-3 litri de apă pe zi.</p>
+
+<h3>Suplimente</h3>
+<ul>
+<li>Proteine whey</li>
+<li>Creatină</li>
+<li>Vitamine</li>
+</ul>
+
+<hr>
+
+<h3>Calculator calorii</h3>
+
+<input type="number" id="greutate" placeholder="Greutate (kg)">
+<input type="number" id="inaltime" placeholder="Înălțime (cm)">
+<input type="number" id="varsta" placeholder="Vârstă">
+
+<select id="sex">
+<option value="m">Masculin</option>
+<option value="f">Feminin</option>
+</select>
+
+<button onclick="calcCalorii()">Calculează</button>
+
+<p id="rezultat"></p>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
